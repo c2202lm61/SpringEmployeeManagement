@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<div th:replace="~{layout :: header}"></div>
+    <form action="#" th:action="@{/add/department}" th:object="${department}" method="post" class="container">
+        <label for="name">Department Name</label>
+        <input type="text" th:field="*{Name}" class="form-control" id="name"/>
+        <td th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}">Name Error</td>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    <h1>Create</h1>
+<div th:replace="~{layout :: footer}"></div>
+</body>
+</html>

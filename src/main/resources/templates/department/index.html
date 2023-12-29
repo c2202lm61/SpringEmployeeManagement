@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Department List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Department List</h1>
+    <a class="btn btn-primary" href="/add/department">Create</a>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="department : ${departmentList}">
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.name}"></td>
+            <td>
+                <a class="btn btn-success" th:href="@{/update/department/{id}(id=${department.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/delete/department/{id}(id=${department.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Department</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-5.2.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<form action="#" th:action="@{/update/employee}" th:object="${employee}" method="post">
+    <input type="hidden" th:field="*{Id}" th:value="${employee.Id}"/>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" th:field="*{Name}" class="form-control" id="name"/>
+        <td th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}">Name Error</td>
+    </div>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" th:field="*{Username}" class="form-control" id="username"/>
+        <td th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}">Name Error</td>
+    </div>
+    <div>
+        <label for="Password">Password:</label>
+        <input type="text" th:field="*{Password}" class="form-control" id="Password"/>
+        <td th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}">Password Error</td>
+    </div>
+    <div>
+        <label for="Address">Address:</label>
+        <input type="text" th:field="*{Address}" class="form-control" id="Address"/>
+        <td th:if="${#fields.hasErrors('Address')}" th:errors="*{Address}">Address Error</td>
+    </div>
+    <div>
+        <label for="Phone">Phone:</label>
+        <input type="text" th:field="*{Phone}" class="form-control" id="Phone"/>
+        <td th:if="${#fields.hasErrors('Phone')}" th:errors="*{Phone}">Phone Error</td>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<h1>Update</h1>
+</body>
+</html>
